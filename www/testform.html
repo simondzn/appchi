@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>serialize demo</title>
+    <style>
+        body, select {
+            font-size: 12px;
+        }
+        form {
+            margin: 5px;
+        }
+        p {
+            color: red;
+            margin: 5px;
+            font-size: 14px;
+        }
+        b {
+            color: blue;
+        }
+    </style>
+    <script src="js/jquery-2.1.1.min.js" type="text/javascript"></script>
+</head>
+<body>
+<form method="post" action="">
+    <table bgcolor="#FFFFFF" cellpadding="0px" cellspacing="0px">
+        <tr>
+            <td style="border-style:none;">
+                <div style="background: url(roundbox.gif) no-repeat left top; padding: 0px; height: 22px;">
+                    <input type="text" name="zoom_query" style="border: none; background-color: transparent; width: 106px; padding-left: 5px; padding-right: 5px;">
+                </div>
+            </td>
+            <td style="border-style:none;">
+                <input type="submit" value="" style="border-style: none; background: url('searchbutton1.gif') no-repeat; width: 24px; height: 22px;">
+            </td>
+        </tr>
+    </table>
+<!--</form>-->
+<!--<form>-->
+    <select name="single">
+        <option>דירה</option>
+        <option>פנטהאוז</option>
+        <option>דירת גן</option>
+        <option>בית פרטי</option>
+    </select>
+    <h4>או סנן לפי</h4>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <input id="agent" class="first" type="search" name="agent" placeholder="לפי סוכן" />
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <input type="checkbox" name="check" value="check1" id="ch1">
+    <label for="ch1">check1</label>
+    <input type="checkbox" name="check" value="check2" checked="checked" id="ch2">
+    <label for="ch2">check2</label>
+
+    <br>
+    <input type="radio" name="radio" value="radio1" checked="checked" id="r1">
+    <label for="r1">radio1</label>
+    <input type="radio" name="radio" value="radio2" id="r2">
+    <label for="r2">radio2</label>
+</form>
+
+<p><tt id="results"></tt></p>
+
+<script>
+    function showValues() {
+        var str = $( "form" ).serialize();
+        $( "#results" ).text( str );
+    }
+    $( "input[type='checkbox'], input[type='radio']" ).on( "click", showValues );
+    $( "select" ).on( "change", showValues );
+    showValues();
+</script>
+
+</body>
+</html>

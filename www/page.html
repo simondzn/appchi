@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+  <title>Hello World</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+  <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="jquerymobile/jquery.mobile-1.4.5.min.js"></script></head>
+<body>
+  <div data-role="page" id="page1">
+    <div data-role="header">
+      <h1>Page 2</h1>
+    </div>
+    <div role="main" class="ui-content">
+      <a href="index.html" data-rel="back" data-transition="slide" class="ui-btn ui-corner-all ui-btn-inline">Go Back To Page 1</a>
+    </div>
+    <script>
+      $(function() {
+        $(".tab-content").swiperight(function() {
+          var $tab = $('#tablist .active').prev();
+          if ($tab.length > 0)
+            $tab.find('a').tab('show');
+        });
+        $(".tab-content").swipeleft(function() {
+          var $tab = $('#tablist .active').next();
+          if ($tab.length > 0)
+            $tab.find('a').tab('show');
+        });
+      });
+    </script>
+
+    <div role="tabpanel">
+
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tab" id="tablist">
+        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
+      </ul>
+
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="home">
+          <div data-role="content">
+            <h1>hi</h1>
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="profile">...</div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

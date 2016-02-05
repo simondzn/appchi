@@ -1,0 +1,216 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Untitled Document</title>
+    <!--css-->
+    <meta name="viewport"
+          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi"/>
+    <link href="css/reset.css" type="text/css" rel="stylesheet">
+    <link href="css/bootstrap.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="font-awesome-4.5.0/css/font-awesome.css">
+    <link href="css/main.css" type="text/css" rel="stylesheet">
+    <link href="css/drop.css" type="text/css" rel="stylesheet">
+
+
+    <!--js-->
+    <script src="js/jquery-2.1.1.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="jquerymobile/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/bootstrap.js" type="text/javascript"></script>
+    <script src='http://ajax.googleapis.com/ajax/libs/prototype/1.7.1/prototype.js'></script>
+
+
+    <style>
+        #wrapper {
+            width: 1080px;
+            height: 1920px;
+            background-image: url(img/home_bg.jpg);
+            background-repeat: no-repeat;
+            padding-top: 200px;
+            overflow: hidden;
+
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+<div id="wrapper">
+
+    <div id="search" style="height:140px;">
+
+        <div class="field" id="searchform">
+
+            <h1>העלאת נכס</h1>
+            <a href="#" onClick="history.go(-1);"><i class="fa fa-arrow-left"></i></a>
+
+        </div>
+    </div>
+
+    <div id="in_wr">
+
+        <form role="form" class="myForm" name="myForm" method="post" id="myForm" onsubmit="submitit()">
+
+
+            <section id="general">
+
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+        <span class="custom-dropdown big">
+       
+    <select>
+
+        <option>דירה</option>
+        <option>פנטהאוז</option>
+        <option>דירת גן</option>
+        <option>בית פרטי</option>
+
+    </select>
+    
+</span>
+
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <section id="stat">
+
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6" style="width: auto">
+                    <span class="dropdown2 big">
+       
+    <select>
+
+        <option>דירה</option>
+        <option>פנטהאוז</option>
+        <option>דירת גן</option>
+        <option>בית פרטי</option>
+
+    </select>
+    
+</span>
+
+
+                        </div>
+
+                        <div class="col-md-6" style="width: auto">
+        <span class="dropdown2 big">
+       
+    <select class="stat">
+
+        <option>נמכר</option>
+        <option>מושכר</option>
+        <option>בשיווק</option>
+
+
+    </select>
+    
+</span>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </section>
+
+
+            <section id="floor">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-md-4" style="width: auto;">
+                            <input class="floor_set" type="search" placeholder="מחיר"/>
+                        </div>
+
+                        <div class="col-md-4" style="width: auto;">
+                            <input class="floor_set" type="search" placeholder="קומה"/>
+                        </div>
+
+                        <div class="col-md-4" style="width: auto;">
+                            <input class="floor_set" type="search" placeholder="מס' חדרים"/>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </section>
+
+            <section id="check">
+
+                <div class="col-md-4" style="width: auto;">
+                    <input class="box" type="checkbox" value="מעלית"/><label>מעלית</label>
+                </div>
+
+                <div class="col-md-4" style="width: auto;">
+                    <input class="box" type="checkbox" value="ממ'ד"/><label>ממ"ד</label>
+                </div>
+
+                <div class="col-md-4" style="width: auto;">
+                    <input class="box" type="checkbox" value="מיזוג"/><label>מיזוג</label>
+                </div>
+
+            </section>
+
+
+            <div class="col-md-12" style="width: auto;">
+                <textarea placeholder="תיאור קצר"></textarea>
+            </div>
+
+
+            <button id="take_pic"><i class="fa fa-camera-retro"></i></button>
+
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12" style="width: auto;">
+                        <input class="send_filter" type="submit" value="הוסף">
+                    </div>
+
+                </div>
+            </div>
+
+
+        </form>
+    </div>
+    <script>
+        function submitit() {
+            console.log("submit");
+//            var landmarkID = $("input:checked").each(function(){
+//                console.log("this: " + $(this).val());
+//            });
+            var form = document.myForm;
+            var string = $(form).serialize();
+            console.log("string: " + string.toString());
+//            var postData = $(this).serialize();
+//            $.ajax({
+//                type: 'POST',
+//                data: postData + '&amp;lid=' + landmarkID,
+//                url: 'http://your-domain.com/comments/save.php',
+//                success: function (data) {
+//                    console.log(data);
+//                    alert('Your comment was successfully added');
+//                },
+//                error: function () {
+//                    console.log(data);
+//                    alert('There was an error adding your comment');
+//                }
+//            });
+
+            return false;
+        }
+    </script>
+</div>
+</body>
+</html>

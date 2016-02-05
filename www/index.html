@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<!--<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />-->
+<link href="css/reset.css" type="text/css" rel="stylesheet">
+<link href="css/bootstrap.css" type="text/css" rel="stylesheet">
+<link href="css/main.css" type="text/css" rel="stylesheet">
+	<!--<link rel="stylesheet" type="text/css" href="jquerymobile/jquery.mobile-1.4.5.min.css">-->
+	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+	<script>
+		$(document).bind('mobileinit',function(){
+			$.mobile.changePage.defaults.changeHash = false;
+			$.mobile.hashListeningEnabled = false;
+			$.mobile.pushStateEnabled = false;
+		});
+	</script>
+	<script src="jquerymobile/jquery.mobile-1.4.5.min.js" type="text/javascript"></script>
+
+	<script type="text/javascript" charset="utf-8" src="js/index.js"></script>
+	<!--<script>-->
+	<!--window.onload=function(){-->
+		<!--console.log("onload");-->
+<!--//		document.addEventListener("deviceready",onDeviceReady, false);-->
+		<!--onDeviceReady();-->
+	<!--}-->
+	<!--function onDeviceReady()-->
+	<!--{-->
+		<!--console.log("device is ready");-->
+		<!--document.getElementById('send').addEventListener('click',moveThis,false);-->
+	<!--}-->
+	<!--function moveThis(){-->
+		<!--console.log("onclick");-->
+		<!--window.location.href = 'http://www.google.com';-->
+		<!--return false;-->
+	<!--}-->
+<!--</script>-->
+<style>
+#wrapper{
+	width:1080px;
+	height:1920px;
+	background-image:url(img/bg.jpg);
+	background-repeat:no-repeat;
+	padding-top:700px;
+	overflow:hidden;
+	
+}
+
+/*login*/
+input{
+	width:885px;
+	height:147px;
+    margin:0px auto;
+	display:block;
+	border:none;
+	border-radius:10px;
+	text-align:right;
+	font-family:almoni, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size:2.6em;
+	margin-bottom:30px;
+	padding-right:50px;
+		-webkit-box-shadow: 0 1px 25px -8px black;
+	   -moz-box-shadow: 0 1px 25px -8px black;
+	        box-shadow: 0 1px 25px -8px black;
+}
+
+input:focus{
+	outline:0;
+}
+
+
+</style>
+
+</head>
+
+<body onload="init()">
+
+
+
+<div id="wrapper">
+
+<form onsubmit="loginto()">
+  
+  <input type="text" name="username" placeholder="שם משתמש">
+  <br>
+
+  <input type="password" name="password" placeholder="סיסמא">
+  
+  <input id="send" type="submit" data-role="button" value="התחבר">
+</form>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Untitled Document</title>
+    <!--css-->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <link href="css/reset.css" type="text/css" rel="stylesheet">
+    <link href="css/bootstrap.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="font-awesome-4.5.0/css/font-awesome.css">
+    <link href="css/main.css" type="text/css" rel="stylesheet">
+    <link href="css/drop.css" type="text/css" rel="stylesheet">
+
+
+
+    <!--js-->
+    <script src="js/jquery-2.1.1.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.js" type="text/javascript"></script>
+    <!--<script src='http://ajax.googleapis.com/ajax/libs/prototype/1.7.1/prototype.js'></script>-->
+<script>
+//    window.onload =
+//    $("form").submit(function(){
+//            console.log($("div").text($("form").serialize()));
+//    });
+</script>
+    <style>
+        #wrapper{
+            width:1080px;
+            height:1920px;
+            background-image:url(img/home_bg.jpg);
+            background-repeat:no-repeat;
+            padding-top:220px;
+            overflow:hidden;
+
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+
+<div id="wrapper">
+
+    <div id="search" style="height:140px;">
+
+        <div class="field" id="searchform">
+
+            <h1>העלאת נכס</h1>
+            <a href="#" onClick="history.go(-1);"><i class="fa fa-arrow-left"></i></a>
+
+        </div>
+    </div>
+
+    <div id="in_wr">
+
+        <form role="form">
+
+
+            <section id="general">
+
+
+                <div class="container">
+                    <div class="row" >
+                        <div class="col-lg-12">
+        <span class="custom-dropdown big" >
+
+    <select >
+
+        <option>דירה</option>
+        <option>פנטהאוז</option>
+        <option>דירת גן</option>
+        <option>בית פרטי</option>
+
+    </select>
+
+</span>
+
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <section id="stat">
+
+
+                <div class="container">
+                    <div class="row" >
+                        <div class="col-md-6" style="width: auto" >
+                    <span class="dropdown2 big">
+
+    <select>
+
+        <option>דירה</option>
+        <option>פנטהאוז</option>
+        <option>דירת גן</option>
+        <option>בית פרטי</option>
+
+    </select>
+
+</span>
+
+
+                        </div>
+
+                        <div class="col-md-6" style="width: auto" >
+        <span class="dropdown2 big">
+
+    <select  class="stat">
+
+        <option>נמכר</option>
+        <option>מושכר</option>
+        <option>בשיווק</option>
+
+
+    </select>
+
+</span>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </section>
+
+
+
+
+            <section id="floor">
+                <div class="container">
+                    <div class="row" >
+
+                        <div class="col-md-4" style="width: auto;" >
+                            <input class="floor_set" type="search" placeholder="מחיר"/>
+                        </div>
+
+                        <div class="col-md-4" style="width: auto;" >
+                            <input class="floor_set" type="search" placeholder="קומה"/>
+                        </div>
+
+                        <div class="col-md-4" style="width: auto;" >
+                            <input class="floor_set" type="search" placeholder="מס' חדרים"/>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </section>
+
+            <section id="check">
+
+                <div class="col-md-4" style="width: auto;" >
+                    <input class="box" type="checkbox" value="מעלית"/><label>מעלית</label>
+                </div>
+
+                <div class="col-md-4" style="width: auto;" >
+                    <input class="box" type="checkbox" value="ממ'ד"/><label>ממ"ד</label>
+                </div>
+
+                <div class="col-md-4" style="width: auto;" >
+                    <input class="box" type="checkbox" value="מיזוג"/><label>מיזוג</label>
+                </div>
+
+            </section>
+
+
+
+            <div class="col-md-12" style="width: auto;" >
+                <textarea placeholder="תיאור קצר"></textarea>
+            </div>
+
+
+
+
+
+            <button id="take_pic"><i class="fa fa-camera-retro"></i></button>
+
+
+            <div class="container">
+                <div class="row" >
+                    <div class="col-md-12" style="width: auto;" >
+                        <input class="send_filter" type="submit" value="הוסף">
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+        </form>
+    </div>
+
+</div>
+</body>
+<script>
+    function showValues() {
+        var str = $( "form" ).serialize();
+        console.log("this: " + str.toString());
+    }
+    $( "select" ).on( "change", showValues );
+    showValues();
+</script>
+</html>
