@@ -44,22 +44,36 @@
 
 <div id="wrapper">
 
-    <div id="search" style="height:140px;">
+    <form role="form" action="">
+        <div id="search">
 
-        <div class="field" id="searchform">
+            <div class="field" id="searchform">
 
-            <h1>העלאת נכס</h1>
-            <a href="#" onClick="history.go(-1);"><i class="fa fa-arrow-left"></i></a>
+                <input id="search_in" name="mainsearch" type="search" placeholder="חיפוש כתובת" autofocus />
+                <input id="look" type="submit" value="">
+                <a id="cencel" href="#" onClick="history.go(-1);" style="	color:#E30003; line-height:165px;"><i class="fa fa-times"></i></a>
 
+            </div>
         </div>
-    </div>
 
-    <div id="in_wr">
+        <div id="in_wr">
 
-        <form role="form">
+
+
+            <h4>או סנן לפי</h4>
 
 
             <section id="general">
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <input id="agent" name="byagent" class="first" type="search" placeholder="לפי סוכן" />
+                        </div>
+                    </div>
+                </div>
+
+
 
 
                 <div class="container">
@@ -110,7 +124,7 @@
                         <div class="col-md-6" style="width: auto" >
         <span class="dropdown2 big">
 
-    <select  class="stat">
+    <select name="status"  class="stat">
 
         <option>נמכר</option>
         <option>מושכר</option>
@@ -130,21 +144,40 @@
 
 
 
+            <section id="price">
+
+
+                <div class="container">
+                    <div class="row" >
+                        <div class="col-md-6" style="width: auto;" >
+                            <input id="agent" name="untilprice" class="price_set" type="search" placeholder="עד מחיר"/>
+                        </div>
+
+                        <div class="col-md-6" style="width: auto;" >
+                            <input id="agent" name="fromprice" class="price_set" type="search" placeholder="ממחיר"/>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </section>
+
 
             <section id="floor">
                 <div class="container">
                     <div class="row" >
 
                         <div class="col-md-4" style="width: auto;" >
-                            <input class="floor_set" type="search" placeholder="מחיר"/>
+                            <input class="floor_set" name="untilfloor" type="search" placeholder="עד קומה"/>
                         </div>
 
                         <div class="col-md-4" style="width: auto;" >
-                            <input class="floor_set" type="search" placeholder="קומה"/>
+                            <input class="floor_set" name="fromfloor" type="search" placeholder="מקומה"/>
                         </div>
 
                         <div class="col-md-4" style="width: auto;" >
-                            <input class="floor_set" type="search" placeholder="מס' חדרים"/>
+                            <input class="floor_set" name="roomnum" type="search" placeholder="מס' חדרים"/>
                         </div>
 
                     </div>
@@ -171,34 +204,18 @@
 
 
 
+
+    </form>
+    <div class="container">
+        <div class="row" >
             <div class="col-md-12" style="width: auto;" >
-                <textarea placeholder="תיאור קצר"></textarea>
+                <input class="send_filter" type="submit" value="סנן">
             </div>
-
-
-
-
-
-            <button id="take_pic"><i class="fa fa-camera-retro"></i></button>
-
-
-            <div class="container">
-                <div class="row" >
-                    <div class="col-md-12" style="width: auto;" >
-                        <input class="send_filter" type="submit" value="הוסף">
-                    </div>
-
-                </div>
-            </div>
-
-
-
-
-        </form>
+        </div>
     </div>
+</div>
 
 </div>
-</body>
 <script>
     function showValues() {
         var str = $( "form" ).serialize();
@@ -206,5 +223,10 @@
     }
     $( "select" ).on( "change", showValues );
     showValues();
+
+    function submitme() {
+        var str = $( "form" ).serialize();
+        console.log("submit: " + str.toString());
+    }
 </script>
 </html>
