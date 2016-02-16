@@ -1,6 +1,12 @@
 function init() {
     document.addEventListener("deviceready", deviceReady, true);
     delete init;
+
+    $(document).bind('mobileinit',function(){
+        $.mobile.changePage.defaults.changeHash = false;
+        $.mobile.hashListeningEnabled = false;
+        $.mobile.pushStateEnabled = false;
+    });
 }
 
 function checkPreAuth() {

@@ -27,6 +27,24 @@ h1,h2,h3,p{
 }
 
 
+.send_filter{
+	
+	width:900px;
+	height:140px;
+    margin:0px auto;
+	display:block;
+	border:none;
+	border-radius:10px;
+	text-align:center;
+	font-family:almoni, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size:2.6em;
+	color:#fff;
+	background-color:#4ec7dc;
+	margin-bottom:30px;
+	padding-right:50px;
+		-webkit-box-shadow: 0 1px 25px -8px black;
+	   -moz-box-shadow: 0 1px 25px -8px black;
+	        box-shadow: 0 1px 25px -8px black;}
 
 /*header*/
 
@@ -59,6 +77,10 @@ header{
 	color:#C5C5C5;
 }
 
+#nav_swipe{
+	font-size:4em;
+}
+
 .fa-bars{
 	margin-left:70px;
 	font-size:3em;
@@ -77,12 +99,12 @@ header{
 
 
 #ar_profile article{
-	width:1020px;
+	width:1040px;
 	height:520px;
 	background-color:rgba(255,255,255,0.8);
 	margin:0px auto;
-	margin-bottom:20px;
-	border-radius:20px;
+	margin-bottom:12px;
+	border-radius:10px;
 	padding:25px;
 	color:#707070;
 }
@@ -99,6 +121,36 @@ header{
 	font-size:40px;
 	display:block;
 	width:900px;
+}
+
+
+article .note{
+	width:100%;
+	height:150px;
+	background-color:rgba(255,255,255,0.9);
+	padding-right:50px;
+	padding-left:50px;
+	float:right;
+     margin-bottom:1px;
+	 margin-top:1px;
+	
+}
+
+#ar_notes article p{
+	font-size:2.2em;
+	line-height:150px;
+	
+}
+
+#ar_notes article BUTTON{
+	border:none;
+	background:none;
+}
+
+#ar_notes article i{
+	font-size:3.3em;
+	line-height:150px;
+	color:#E80307;
 }
 
 
@@ -148,11 +200,26 @@ header{
 	
 }
 
-#searchform i{
+button{
+	outline:0;
+}
+
+#searchform a{
 	font-size:4.3em;
-	color:#E70307;
-	margin-top:55px;
+	color:#4ec7dc;
+	line-height:140px;
 	margin-left:50px;
+}
+
+
+
+#searchform h1{
+	margin-right:35%;
+	margin-top:50px;
+	color:#4ec7dc;
+	color:#474747;
+	font-size:3em;
+	
 }
 
 
@@ -189,6 +256,25 @@ h4{
 	
 }
 
+
+textarea{
+	width:900px;
+	height:300px;
+	border:none;
+	padding-right:50px;
+	border-radius:10px;
+	text-align:right;
+	font-family:almoni, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size:2.6em;
+	margin-bottom:30px;
+		-webkit-box-shadow: 0 1px 25px -8px black;
+	   -moz-box-shadow: 0 1px 25px -8px black;
+	        box-shadow: 0 1px 25px -8px black;
+	
+}
+
+
+
 #add_apt{
 	position:fixed;
 	background:none;
@@ -209,9 +295,86 @@ h4{
 }
 
 
-#stat{
+#stat , #price, #floor{
 	width:900px;
 		margin-top:130px;
+}
+
+#check{	width:900px; margin-top:80px;}
+
+
+
+  input[type=checkbox]
+{
+ /* Double-sized Checkboxes */
+ -ms-transform: scale(5); /* IE */
+ -moz-transform: scale(5); /* FF */
+ -webkit-transform: scale(5); /* Safari and Chrome */
+ -o-transform: scale(102); /* Opera */
+margin: 50px;
+margin-left: 110px;
+margin-bottom:120px;
+
+}
+
+label{
+	font-size:2.6em;
+	font-weight:500;
+}
+
+.price_set{
+	
+width:430px;
+	height:115px;
+	border:none;
+	padding-right:50px;
+	border-radius:10px;
+	text-align:right;
+	font-family:almoni, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size:2.6em;
+	margin-bottom:30px;
+	background-image:url(../img/ils.png);
+	background-repeat:no-repeat;
+	background-position:40px;
+		-webkit-box-shadow: 0 1px 25px -8px black;
+	   -moz-box-shadow: 0 1px 25px -8px black;
+	        box-shadow: 0 1px 25px -8px black;	
+	
+}
+
+
+.floor_set{
+	
+width:277px;
+	height:115px;
+	border:none;
+	padding-right:50px;
+	border-radius:10px;
+	text-align:right;
+	font-family:almoni, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size:2.6em;
+	margin-bottom:30px;
+		-webkit-box-shadow: 0 1px 25px -8px black;
+	   -moz-box-shadow: 0 1px 25px -8px black;
+	        box-shadow: 0 1px 25px -8px black;	
+	
+}
+
+.client_set{
+	
+width:600px;
+	height:115px;
+	border:none;
+	padding-right:50px;
+	border-radius:10px;
+	text-align:right;
+	font-family:almoni, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size:2.6em;
+	margin-bottom:40px;
+		-webkit-box-shadow: 0 1px 25px -8px black;
+	   -moz-box-shadow: 0 1px 25px -8px black;
+	        box-shadow: 0 1px 25px -8px black;	
+	
 }
 
 
@@ -222,7 +385,7 @@ h4{
 
 /*modal*/
 
-#myModal{
+#myModal, #myModal2{
 	top:500px;
 	text-align:center;
 	margin-right:50px;
@@ -259,9 +422,26 @@ background-color:#FFF;
 	border-radius:10px;
 }
 
-#add_note:focus, textarea:focus{
+#add_note:focus, textarea:focus , #take_pic:focus{
 	outline:0;
 	
+}
+
+
+#take_pic{
+	width:140px;
+	height:140px;
+	margin:0px auto;
+	display:block;
+	color:#fff;
+	font-size:4em;
+	border:none;
+	border-radius:50%;
+	background-color:#4ec7dc;
+	-webkit-box-shadow: 0 1px 25px -8px black;
+	   -moz-box-shadow: 0 1px 25px -8px black;
+	        box-shadow: 0 1px 25px -8px black;
+			margin-bottom:100px;
 }
 
 
