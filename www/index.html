@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html>
 <head>
@@ -15,12 +16,21 @@
 
 
 <!--js-->
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-<script src="js/jquery-2.1.1.min.js" type="text/javascript"></script>
-<script src="js/registration.js" type="text/javascript"></script>
-<script src="js/nav.js" type="text/javascript"></script>
-<script src="js/bootstrap.js" type="text/javascript"></script>
+	<!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>-->
+	<script src="js/jquery-2.1.1.min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="jquerymobile/jquery.mobile-1.4.5.min.js"></script>
+	<!--<script src="js/registration.js" type="text/javascript"></script>-->
+	<script src="js/nav.js" type="text/javascript"></script>
+	<script src="js/bootstrap.js" type="text/javascript"></script>
 
+	<!--<script rel="stylesheet" src="jquerymobile/jquery.mobile-1.4.5.min.css"></script>-->
+	<script>
+		$(document).bind('mobileinit',function(){
+			$.mobile.changePage.defaults.changeHash = false;
+			$.mobile.hashListeningEnabled = false;
+			$.mobile.pushStateEnabled = false;
+		});
+	</script>
 <style>
 #wrapper{
 	width:1080px;
@@ -47,7 +57,7 @@
 
   <div id="top_bar">
      <i class="fa fa-bars"></i>
-     <a href="search.html"><i class="fa fa-search"></i></a>
+     <a onclick="dd()"><i class="fa fa-search"></i></a>
   </div>
  
   
@@ -55,7 +65,7 @@
   <section class="container" id="nav_swipe">
   <nav id="lol" class="row">
     <div></div>
-    <ul>
+    <ul role="tablist" id="tablist" class="tablist">
       <li data-xcoord="0px" data-width="360px" data-target="ar_profile" ><i class="fa fa-user"></i></li>
       <li data-xcoord="360px" data-width="360px" data-target="ar_feed" ><i class="fa fa-phone"></i></li>
       <li data-xcoord="720px" data-width="360px" data-target="ar_notes"  class="active"><i class="fa fa-pencil-square-o"></i></li>
@@ -97,7 +107,9 @@
 <!--contacts-->
 <div id="ar_feed" class="ar_wrapper">
 
- <button  data-toggle="modal" data-target="#myModal2"  id="add_apt" ><i class="fa fa-user-plus"></i></button> 
+
+<button id="add_apt" data-toggle="modal" data-target="#myModal2"><i class="fa fa-user-plus"></i></button>
+
 </div>
 
 
@@ -137,10 +149,10 @@
           <div class="modal-body">
             <ul class="rslides">
             
-              <input class="client_set" type="text" placeholder="שם הלקוח"/>
-              <input class="client_set" type="text" placeholder="כתובת"/>
-              <input class="client_set" type="text" placeholder="טלפון"/>
-              <input  onClick="addmore()" data-dismiss="modal" id="add_note" type="submit" value="הוסף לקוח">
+              <input id="c_name" class="client_set" type="text" placeholder="שם הלקוח"/>
+              <input id="c_address" class="client_set" type="text" placeholder="כתובת"/>
+              <input id="c_phone" class="client_set" type="text" placeholder="טלפון"/>
+              <input  onClick="addContact()" data-dismiss="modal" id="add_note" type="submit" value="הוסף לקוח">
               
               
             </ul>
@@ -177,49 +189,7 @@
     
     
 
-<script>
-	$(function() {
-		$("div.wrapper").swiperight(function() {
-			console.log("swipe right");
-			var $tab = $('#tablist .active').prev();
-			var width = $('#tablist li').data("width");
-			var $content = $('#content.active').prev();
-			var xcoord = $('#tablist li').data("xcoord");
-			console.log(xcoord);
-			if ($tab.length > 0) {
-				var newpx = parseInt(xcoord);
-				newpx = newpx-360;
-				console.log("newpx: " + newpx);
-				$('#tablist li').data("xcoord", newpx+"px");
-				var currentAttrValue = $(this).attr('href');
-				$('.tabs ' + currentAttrValue).fadeIn(4000).siblings().hide();
-				$("nav div").stop().animate({marginLeft:newpx+"px",'width':width}, 200);
-				$tab.find('a').tab('show');
-//$content.find('a').tab('show');
-//                    $('#ar_feed').addClass('tab-pane active');
-			}
-		});
-		$("div.wrapper").swipeleft(function() {
-			console.log("swipe left");
-			var width = $('#tablist li').data("width");
-			var xcoord = $('#tablist li').data("xcoord");
-			console.log(xcoord);
-			var $tab = $('#tablist .active').next();
-			if ($tab.length > 0){
-				var newpx = parseInt(xcoord);
-				newpx = newpx+360;
-				console.log("newpx: " + newpx);
-				$('#tablist li').data("xcoord", newpx+"px");
-				$('#t')
-//                    window.onload = function() { setTimeout (function () {  scrollTo(0,0); }, 0);}
-				$("#lol div").stop().animate({marginLeft:newpx+"px",'width':width}, 200);
-				$tab.find('a').tab('show');
 
-			}
-		});
-	});
-
-</script>
     
 </body>
 
@@ -230,14 +200,44 @@ var am = 1;
 function addmore() {
 	//alert('smartut');
     //var newText = $('name','odg'+am).attr('rows',1).attr('cols',50);
-	var newText = $('textarea').val();
+	
 	//alert(newText);
     //var newBtn = $('<input />').attr('onclick','#add_note()').html('.note');
     //$('#ar_notes').append(newText);
-    $('#ar_notes').append('<br />');
+	var newText = $('textarea').val();
+      $('#ar_notes').append('<br />');
     $('#ar_notes').append('<article><div class="note"><p class="show_note">' +newText +'</p><button><i class="fa fa-trash-o"></i></button>').fadeIn(500);
 	$('textarea').filter('[id*=put_note]').val('');
 
+	
+	
+	
+
+	
+}
+
+
+
+function addContact() {
+	//alert('smartut');
+    //var newText = $('name','odg'+am).attr('rows',1).attr('cols',50);
+	
+	var name = $('#c_name').val();
+	var adress = $('#c_address').val();
+	var phone = $('#c_phone').val();
+	//alert(newText);
+    //var newBtn = $('<input />').attr('onclick','#add_note()').html('.note');
+    //$('#ar_notes').append(newText);
+	//$('#ar_feed').append('<br />');
+	
+	$('#ar_feed').append('<article><div class="contact"><p class="show_note">' + name + "   " + adress + "   " + phone +'</p><button><i class="fa fa-trash-o"></i></button>').fadeIn(500);
+	$('input').filter('[class*=client_set]').val('');
+	
+ 
+	
+	
+
+	
 }
 
 
