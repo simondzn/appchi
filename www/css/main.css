@@ -68,7 +68,7 @@ header{
 	background-position:center;
 	z-index:999;
 	padding-top:52px;
-	padding-right:40px
+	
 }
 
 #top_bar i{
@@ -79,6 +79,7 @@ header{
 
 #nav_swipe{
 	font-size:4em;
+	padding:0px;
 }
 
 .fa-bars{
